@@ -1,4 +1,4 @@
-[build]
+k[build]
   publish = "public"
   command = "# no build command needed for static HTML"
 
