@@ -1,0 +1,13 @@
+[build]
+  publish = "public"
+  command = "# no build command needed for static HTML"
+
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Content-Type = "text/html; charset=utf-8"
+
+[[headers]]
+  for = "/Untitled design(2).jpg"
+  [headers.values]
+    Content-Type = "image/jpeg"
