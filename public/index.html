@@ -2,70 +2,47 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
-<!-- Added this line -->
-    <meta name="viewport" content="width=device-width, 
-initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coming Soon - MapMyMilk</title>
     <!-- Include Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         /* Custom Tailwind Configuration (simulating bolt colors) */
-        /* You can define these in a tailwind.config.js if you were 
-building with Tailwind CLI */
         :root {
-            --color-bolt-purple-600: #6b4f8b; /* A deep purple, adjust as 
-needed */
+            --color-bolt-purple-600: #6b4f8b; /* A deep purple, adjust as needed */
             --color-bolt-purple-700: #574170; /* Slightly darker */
             --color-bolt-purple-50: #ede7f6;  /* Very light purple */
             --color-bolt-pink-50: #fdebf2;    /* Very light pink */
             --color-bolt-indigo-50: #e0f2fe;  /* Very light blue */
-            --color-bolt-purple-200: #d8ccff; /* From your background 
-gradient */
-            --color-bolt-pink-200: #ffd6eb;   /* From your background 
-gradient */
-            --color-bolt-indigo-200: #d8e0ff; /* From your background 
-gradient */
-            --color-bolt-text: #1a202c; /* Equivalent to gray-900 or 
-similar dark text */
+            --color-bolt-purple-200: #d8ccff; /* From your background gradient */
+            --color-bolt-pink-200: #ffd6eb;   /* From your background gradient */
+            --color-bolt-indigo-200: #d8e0ff; /* From your background gradient */
+            --color-bolt-text: #1a202c; /* Equivalent to gray-900 or similar dark text */
             --color-bolt-background: #ffffff; /* White background */
         }
 
         /* Apply custom colors using CSS variables */
         .text-bolt-text { color: var(--color-bolt-text); }
-        .bg-bolt-purple-600 { background-color: 
-var(--color-bolt-purple-600); }
-        .hover\:bg-bolt-purple-700:hover { background-color: 
-var(--color-bolt-purple-700); }
-        .focus\:ring-bolt-purple-500:focus { --tw-ring-color: 
-var(--color-bolt-purple-600); } /* Adjusting focus ring */
+        .bg-bolt-purple-600 { background-color: var(--color-bolt-purple-600); }
+        .hover\:bg-bolt-purple-700:hover { background-color: var(--color-bolt-purple-700); }
+        .focus\:ring-bolt-purple-500:focus { --tw-ring-color: var(--color-bolt-purple-600); } /* Adjusting focus ring */
         .text-bolt-purple-600 { color: var(--color-bolt-purple-600); }
-        .border-bolt-purple-600 { border-color: 
-var(--color-bolt-purple-600); }
-        .bg-bolt-background { background-color: 
-var(--color-bolt-background); }
-        .hover\:bg-bolt-purple-50:hover { background-color: 
-var(--color-bolt-purple-50); }
-        .border-bolt-purple-200 { border-color: 
-var(--color-bolt-purple-200); }
-        .bg-bolt-purple-50 { background-color: 
-var(--color-bolt-purple-50); }
+        .border-bolt-purple-600 { border-color: var(--color-bolt-purple-600); }
+        .bg-bolt-background { background-color: var(--color-bolt-background); }
+        .hover\:bg-bolt-purple-50:hover { background-color: var(--color-bolt-purple-50); }
+        .border-bolt-purple-200 { border-color: var(--color-bolt-purple-200); }
+        .bg-bolt-purple-50 { background-color: var(--color-bolt-purple-50); }
         .text-bolt-purple-700 { color: var(--color-bolt-purple-700); }
         .bg-bolt-pink-50 { background-color: var(--color-bolt-pink-50); }
-        .text-bolt-pink-700 { color: var(--color-bolt-purple-700); } /* 
-Assuming bolt-pink-700 matches purple-700 for simplicity or adjust */
-        .bg-bolt-indigo-50 { background-color: 
-var(--color-bolt-indigo-50); }
-        .text-bolt-indigo-700 { color: var(--color-bolt-purple-700); } /* 
-Assuming bolt-indigo-700 matches purple-700 for simplicity or adjust */
+        .text-bolt-pink-700 { color: var(--color-bolt-purple-700); } /* Assuming bolt-pink-700 matches purple-700 for simplicity or adjust */
+        .bg-bolt-indigo-50 { background-color: var(--color-bolt-indigo-50); }
+        .text-bolt-indigo-700 { color: var(--color-bolt-purple-700); } /* Assuming bolt-indigo-700 matches purple-700 for simplicity or adjust */
 
         /* Background gradient colors from your React component */
-        .bg-gradient-radial-1 { background: radial-gradient(circle at 20% 
-80%, #D8CCFF 0%, transparent 40%); }
-        .bg-gradient-radial-2 { background: radial-gradient(circle at 80% 
-20%, #D8E0FF 0%, transparent 40%); }
-        .bg-gradient-radial-3 { background: radial-gradient(circle at 50% 
-50%, #FFD6EB 0%, transparent 40%); }
+        .bg-gradient-radial-1 { background: radial-gradient(circle at 20% 80%, #D8CCFF 0%, transparent 40%); }
+        .bg-gradient-radial-2 { background: radial-gradient(circle at 80% 20%, #D8E0FF 0%, transparent 40%); }
+        .bg-gradient-radial-3 { background: radial-gradient(circle at 50% 50%, #FFD6EB 0%, transparent 40%); }
 
 
         /* Custom Animations from your React component's style block */
@@ -84,10 +61,8 @@ Assuming bolt-indigo-700 matches purple-700 for simplicity or adjust */
             to { opacity: 1; }
         }
 
-        .animate-fade-in-down { animation: fade-in-down 0.7s ease-out 
-forwards; }
-        .animate-fade-in-up { animation: fade-in-up 0.7s ease-out 
-forwards; }
+        .animate-fade-in-down { animation: fade-in-down 0.7s ease-out forwards; }
+        .animate-fade-in-up { animation: fade-in-up 0.7s ease-out forwards; }
         .animate-fade-in { animation: fade-in 0.7s ease-out forwards; }
 
         /* Background flow animation from your React component */
@@ -102,177 +77,183 @@ forwards; }
         /* Applying the combined radial gradient and flow animation */
         .bg-gradient-radial-combined {
             background:
-                radial-gradient(circle at 20% 80%, #D8CCFF 0%, 
-transparent 40%),
-                radial-gradient(circle at 80% 20%, #D8E0FF 0%, 
-transparent 40%),
-                radial-gradient(circle at 50% 50%, #FFD6EB 0%, 
-transparent 40%);
+                radial-gradient(circle at 20% 80%, #D8CCFF 0%, transparent 40%),
+                radial-gradient(circle at 80% 20%, #D8E0FF 0%, transparent 40%),
+                radial-gradient(circle at 50% 50%, #FFD6EB 0%, transparent 40%);
             background-size: 300% 300%;
             background-position: 50% 50%;
-            animation: background-flow 30s ease-in-out infinite 
-alternate;
+            animation: background-flow 30s ease-in-out infinite alternate;
         }
 
-        /* Base body styles */
+        /* Base body styles - Removed min-h-screen and overflow-hidden */
         body {
-            font-family: 'Inter', sans-serif; /* Using Inter as per 
-instructions */
+            font-family: 'Inter', sans-serif;
+            display: flex; /* Kept flex properties for overall centering */
+            flex-direction: column;
+            align-items: center;
+            padding: 1rem; /* Kept padding for spacing */
         }
     </style>
 </head>
-<body class="min-h-screen relative flex flex-col items-center 
-justify-center p-4 overflow-hidden">
+<body class="relative"> <!-- Removed min-h-screen and overflow-hidden here -->
     <!-- Background Gradient Layer with Animation -->
     <div class="absolute inset-0 z-0 bg-gradient-radial-combined"></div>
 
-    <!-- Hero Section -->
-    <section class="text-center py-12 md:py-20 px-4 max-w-4xl w-full 
-relative z-10 animate-fade-in-down">
-        <!-- Logo -->
-        <img
-            class="mx-auto h-24 w-auto mb-6"
-            src="Untitled design(2).png" <!-- Changed from .jpg to .png 
--->
-        
-        <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 
-leading-tight mb-4 tracking-tight">
-            MapMyMilk is Coming Soon!
-        </h1>
-        <p class="text-lg md:text-xl text-bolt-text mb-8 max-w-2xl 
-mx-auto opacity-0 animate-fade-in" style="animation-delay: 0.5s; 
-animation-fill-mode: forwards;">
-            We're busy perfecting an amazing experience to help you 
-pinpoint your baby's food sensitivities.
-            Get ready to easily track food intake and baby symptoms for 
-clarity and peace of mind.
-        </p>
-        <div class="flex flex-col sm:flex-row justify-center gap-4 
-opacity-0 animate-fade-in-up" style="animation-delay: 1s; 
-animation-fill-mode: forwards;">
-            <!-- Sign Up / Log In Button -->
-            <a
-                href="#"
-                class="inline-flex items-center justify-center px-8 py-3 
-border border-transparent text-base font-medium rounded-full shadow-lg 
-text-white bg-bolt-purple-600 hover:bg-bolt-purple-700 focus:outline-none 
-focus:ring-2 focus:ring-offset-2 focus:ring-bolt-purple-500 
-transition-all duration-300 ease-in-out transform hover:scale-105 
-hover:shadow-xl"
-            >
-                <!-- Icon Placeholder -->
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" 
-height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" 
-stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
-class="w-5 h-5 mr-2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 
-4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 
-3.13a4 4 0 0 1 0 7.75"/></svg>
-                Notify Me When Launched
-            </a>
-            <!-- Continue as Guest Button -->
-            <a
-                href="#"
-                class="inline-flex items-center justify-center px-8 py-3 
-border border-bolt-purple-600 text-base font-medium rounded-full 
-shadow-lg text-bolt-purple-600 bg-bolt-background hover:bg-bolt-purple-50 
-focus:outline-none focus:ring-2 focus:ring-offset-2 
-focus:ring-bolt-purple-500 transition-all duration-300 ease-in-out 
-transform hover:scale-105 hover:shadow-xl"
-            >
-                <!-- Icon Placeholder -->
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" 
-height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" 
-stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
-class="w-5 h-5 mr-2"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 
-2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" x2="3" y1="12" 
-y2="12"/></svg>
-                Learn More
-            </a>
-        </div>
-    </section>
-    <!-- Features Section -->
-    <section class="bg-bolt-background rounded-xl shadow-2xl p-8 md:p-12 max-w-5xl w-full my-8 border border-bolt-purple-200 relative z-10 animate-fade-in opacity-0" style="animation-delay: 1.5s; animation-fill-mode: forwards;">
-        <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-10">
-            How It Will Work
-        </h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <!-- Food Tracking Feature -->
-            <div
-                class="flex flex-col items-center text-center p-6 bg-bolt-purple-50 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
-            >
-                <div class="p-4 bg-bolt-purple-200 rounded-full mb-4 shadow-inner">
-                    <!-- Milk Icon Placeholder (simple SVG) -->
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-bolt-purple-700"><path d="M8 2h8a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"/><path d="M8 7h8"/><path d="M8 12h8"/><path d="M8 17h8"/></svg>
-                </div>
-                <h3 class="text-xl font-semibold text-bolt-text mb-3">Track Food</h3>
-                <p class="text-bolt-text">
-                    Easily log your food intake, including expressed milk, to create a detailed diet history.
-                </p>
+    <!-- Main content wrapper - Removed min-h-screen and overflow-hidden here -->
+    <div class="relative flex flex-col items-center justify-center p-4">
+        <!-- Hero Section -->
+        <section class="text-center py-12 md:py-20 px-4 max-w-4xl w-full relative z-10 animate-fade-in-down">
+            <!-- Logo -->
+            <img
+                class="mx-auto h-24 w-auto mb-6" <!-- Removed drop-shadow-xl here -->
+                src="Untitled design(2).png"
+                alt="MapMyMilk Logo"
+                onerror="this.onerror=null;this.src='https://placehold.co/100x100/cccccc/ffffff?text=Logo';"
+            />
+            <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-4 tracking-tight">
+                MapMyMilk is Coming Soon!
+            </h1>
+            <p class="text-lg md:text-xl text-bolt-text mb-8 max-w-2xl mx-auto opacity-0 animate-fade-in" style="animation-delay: 0.5s; animation-fill-mode: forwards;">
+                We're busy perfecting an amazing experience to help you pinpoint your baby's food sensitivities.
+                Get ready to easily track food intake and baby symptoms for clarity and peace of mind.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4 opacity-0 animate-fade-in-up" style="animation-delay: 1s; animation-fill-mode: forwards;">
+                <!-- Sign Up / Log In Button -->
+                <a
+                    href="#"
+                    class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full shadow-lg text-white bg-bolt-purple-600 hover:bg-bolt-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-bolt-purple-500 transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl"
+                >
+                    <!-- Icon Placeholder -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 mr-2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    Notify Me When Launched
+                </a>
+                <!-- Continue as Guest Button -->
+                <a
+                    href="#"
+                    class="inline-flex items-center justify-center px-8 py-3 border border-bolt-purple-600 text-base font-medium rounded-full shadow-lg text-bolt-purple-600 bg-bolt-background hover:bg-bolt-purple-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-bolt-purple-500 transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl"
+                >
+                    <!-- Icon Placeholder -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 mr-2"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" x2="3" y1="12" y2="12"/></svg>
+                    Learn More
+                </a>
             </div>
-            <!-- Symptom Logging Feature -->
-            <div
-                class="flex flex-col items-center text-center p-6 bg-bolt-pink-50 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
-            >
-                <div class="p-4 bg-bolt-indigo-200 rounded-full mb-4 shadow-inner">
-                    <!-- Baby Icon Placeholder (simple SVG) -->
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-bolt-purple-700"><path d="M9 18v3m6-3v3m2-15H7C4 3 2 4.5 2 7c0 4.5 4 8 8 9.5a7 7 0 0 0 4-3l2-2c2.5-2.5 3-5 3-7.5 0-2.5-2-4-5-4z"/><circle cx="12" cy="7" r="2"/></svg>
-                </div>
-                <h3 class="text-xl font-semibold text-bolt-text mb-3">Log Symptoms</h3>
-                <p class="text-bolt-text">
-                    Record your baby's symptoms, their severity, and relevant details to spot changes.
-                </p>
-            </div>
-            <!-- Correlation Analysis Feature -->
-            <div
-                class="flex flex-col items-center text-center p-6 bg-bolt-indigo-50 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
-            >
-                <div class="p-4 bg-bolt-pink-200 rounded-full mb-4 shadow-inner">
-                    <!-- Bar Chart Icon Placeholder (simple SVG) -->
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-bolt-purple-700"><line x1="12" x2="12" y1="20" y2="10"/><line x1="18" x2="18" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="16"/></svg>
-                </div>
-                <h3 class="text-xl font-semibold text-bolt-text mb-3">Find Correlations</h3>
-                <p class="text-bolt-text">
-                    Our smart analysis helps identify potential links between foods and symptoms over time.
-                </p>
-            </div>
-        </div>
-    </section>
- 
-    </div>
+        </section>
 
-    <!-- Footer / Call to Action -->
-    <section class="text-center py-12 px-4 max-w-4xl w-full relative z-10 
-opacity-0 animate-fade-in-up" style="animation-delay: 2s; 
-animation-fill-mode: forwards;">
-        <h2 class="text-3xl font-bold text-gray-900 mb-4">
-            Ready to Find Answers?
-        </h2>
-        <p class="text-lg text-bolt-text mb-8">
-            The full MapMyMilk experience will be launching soon. Stay 
-tuned!
-        </p>
-        <div class="flex flex-col sm:flex-row justify-center gap-4">
-            <!-- Footer Sign Up Button -->
-            <a
-                href="#"
-                class="inline-flex items-center justify-center px-8 py-3 
-border border-transparent text-base font-medium rounded-full shadow-lg 
-text-white bg-bolt-purple-600 hover:bg-bolt-purple-700 focus:outline-none 
-focus:ring-2 focus:ring-offset-2 focus:ring-bolt-purple-500 
-transition-all duration-300 ease-in-out transform hover:scale-105 
-hover:shadow-xl"
-            >
-                <!-- Icon Placeholder -->
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" 
-height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" 
-stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
-class="w-5 h-5 mr-2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 
-4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 
-3.13a4 4 0 0 1 0 7.75"/></svg>
-                Get Updates
-            </a>
+        <!-- Features Section -->
+        <section class="bg-bolt-background rounded-xl shadow-2xl p-8 md:p-12 max-w-5xl w-full my-8 border border-bolt-purple-200 relative z-10 animate-fade-in opacity-0" style="animation-delay: 1.5s; animation-fill-mode: forwards;">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-10">
+                How It Will Work
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Food Tracking Feature -->
+                <div
+                    class="flex flex-col items-center text-center p-6 bg-bolt-purple-50 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                >
+                    <div class="p-4 bg-bolt-purple-200 rounded-full mb-4 shadow-inner">
+                        <!-- Milk Icon Placeholder (simple SVG) -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-bolt-purple-700"><path d="M8 2h8a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"/><path d="M8 7h8"/><path d="M8 12h8"/><path d="M8 17h8"/></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-bolt-text mb-3">Track Food</h3>
+                    <p class="text-bolt-text">
+                        Easily log your food intake, including expressed milk, to create a detailed diet history.
+                    </p>
+                </div>
+                <!-- Symptom Logging Feature -->
+                <div
+                    class="flex flex-col items-center text-center p-6 bg-bolt-pink-50 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                >
+                    <div class="p-4 bg-bolt-indigo-200 rounded-full mb-4 shadow-inner">
+                        <!-- Baby Icon Placeholder (simple SVG) -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-bolt-purple-700"><path d="M9 18v3m6-3v3m2-15H7C4 3 2 4.5 2 7c0 4.5 4 8 8 9.5a7 7 0 0 0 4-3l2-2c2.5-2.5 3-5 3-7.5 0-2.5-2-4-5-4z"/><circle cx="12" cy="7" r="2"/></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-bolt-text mb-3">Log Symptoms</h3>
+                    <p class="text-bolt-text">
+                        Record your baby's symptoms, their severity, and relevant details to spot changes.
+                    </p>
+                </div>
+                <!-- Correlation Analysis Feature -->
+                <div
+                    class="flex flex-col items-center text-center p-6 bg-bolt-indigo-50 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                >
+                    <div class="p-4 bg-bolt-pink-200 rounded-full mb-4 shadow-inner">
+                        <!-- Bar Chart Icon Placeholder (simple SVG) -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-bolt-purple-700"><line x1="12" x2="12" y1="20" y2="10"/><line x1="18" x2="18" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="16"/></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-bolt-text mb-3">Find Correlations</h3>
+                    <p class="text-bolt-text">
+                        Our smart analysis helps identify potential links between foods and symptoms over time.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dummy content for scrolling -->
+        <div class="h-96 w-full flex items-center justify-center py-20 text-gray-400 text-center bg-gray-50 border-t border-b border-gray-200">
+            <p class="text-xl">More content will go here!<br>This space is just for scrolling demonstration.</p>
         </div>
-    </section>
+        <div class="h-96 w-full flex items-center justify-center py-20 text-gray-400 text-center">
+            <p class="text-xl">Scroll down to see more.<br>We're making great progress!</p>
+        </div>
+
+        <!-- Footer / Call to Action -->
+        <section class="text-center py-12 px-4 max-w-4xl w-full relative z-10 opacity-0 animate-fade-in-up" style="animation-delay: 2s; animation-fill-mode: forwards;">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">
+                Ready to Find Answers?
+            </h2>
+            <p class="text-lg text-bolt-text mb-8">
+                The full MapMyMilk experience will be launching soon. Stay tuned!
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <!-- Footer Sign Up Button -->
+                <a
+                    href="#"
+                    class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full shadow-lg text-white bg-bolt-purple-600 hover:bg-bolt-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-bolt-purple-500 transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl"
+                >
+                    <!-- Icon Placeholder -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 mr-2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    Get Updates
+                </a>
+            </div>
+        </section>
+    </div> <!-- Closing tag for the main content wrapper -->
 </body>
 </html>
+```
 
+---
+
+Here are the step-by-step instructions for updating `index.html` directly on GitHub:
+
+1.  **Go to your GitHub repository:**
+    Open your web browser and navigate to your `cmpamama/templanding` repository on GitHub.
+
+2.  **Navigate to the `index.html` file:**
+    * Click on the `public` folder.
+    * Click on `index.html`.
+
+3.  **Edit the file:**
+    * On the `index.html` file page, click the **pencil icon** (usually on the right side, above the file content) to edit the file.
+
+4.  **Replace the entire content with the updated code:**
+    * Select all the existing code in the editor window (e.g., `Ctrl + A` on Windows/Linux, `Cmd + A` on Mac).
+    * Delete the selected content.
+    * **Copy *all* the code** from the **"Temporary Coming Soon Landing Page"** Canvas directly above this response.
+    * **Paste the copied code** into the GitHub editor.
+
+5.  **Commit the changes:**
+    * Scroll down to the "Commit changes" section.
+    * Add a short, descriptive commit message (e.g., "Fix logo shape and enable scrolling").
+    * Click the green **"Commit changes"** button.
+
+6.  **Trigger a New Deploy on Netlify:**
+    * Go to your Netlify dashboard and select your site.
+    * Go to the **"Deploys"** tab.
+    * GitHub will automatically trigger a new deploy because you pushed changes. You'll see a new deploy starting.
+    * Wait for the new deploy to complete and show as "Published".
+
+7.  **Final Check in Browser:**
+    * Once the new Netlify site is "Published".
+    * Open your browser and navigate to your Netlify URL (your current `*.netlify.app` one).
+    * Perform a **hard refresh** (`Cmd + Shift + R` on Mac, `Ctrl + Shift + R` on Windows/Linux) or open an Incognito/Private window.
+
+This should finally resolve the logo display issue (it will no longer be cropped) and ensure the page scrolls correct
